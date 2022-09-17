@@ -51,7 +51,10 @@ export default {
       <div class="mr-12">Item Name</div>
       <div> Item Price</div>
     </div>
-    <div v-for="item in restaurantData.items" :key="item.id">
+    <div v-if="!restaurantData.items.length">
+      <h1> No Items</h1>
+    </div>
+    <div v-else v-for="item in restaurantData.items" :key="item.id">
       <div class="flex flex-row mb-8 mt-12 justify-center">
         <h1 class="font-bold w-36">{{item.name}}</h1>
         <span class="w-56">{{item.price}}</span>
