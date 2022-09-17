@@ -21,8 +21,6 @@ export default {
     async mounted() {
         await this.getAllItems
         this.isLoading = false
-        console.log(this.allItems)
-
     }
 }
 </script>
