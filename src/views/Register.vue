@@ -38,11 +38,11 @@ export default {
         <form @submit="submitLogin" class="flex h-screen items-center justify-center">
             <div class="flex flex-col h-78 w-72">
                 <label for="fullName ">Full Name</label>
-                <input class="input bg-blue-100 mb-8 rounded h-8" type="text" key="fullName" v-model="user.fullName" required/>
+                <input class="input bg-blue-100 mb-8 rounded h-8" type="text" key="fullName" v-model="user.fullName" placeholder="Full Name" required/>
                 <label for="email">E mail</label>
-                <input class="input mb-8 rounded h-8" type="email" key="email" v-model="user.email" required/>
+                <input lass="input bg-blue-100 mb-8 rounded h-8" type="email" key="email" v-model="user.email" placeholder="Email" required/>
                 <label for="password">Password</label>
-                <input class="input mb-8 rounded h-8" type="password" key="password" v-model="user.password" required/>
+                <input lass="input bg-blue-100 mb-8 rounded h-8" type="password" key="password" v-model="user.password" placeholder="Passwords" required/>
                 <div class="field field-button">
                     <button class="button border rounded w-24 h-8 bg-blue-100" type="submit">Register</button>
                 </div>
