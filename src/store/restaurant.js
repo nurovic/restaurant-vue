@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 const mutations = {
   GET_RESTAURANTS: "getRestaurants",
+  GET_ALL_ITEMS: "getAllItems"
 };
 
 const actions = {
@@ -16,16 +17,21 @@ const actions = {
   ADD_ITEM: "addItem",
   ADD_TO_ORDER: "addToOrder",
   GET_ORDERS: "getOrders",
+  GET_ALL_ITEMS: "getAllItems"
 };
 
 const restaurant = {
   namespaced: true,
   state: {
     restaurants: [],
+    allItems: [],
   },
   mutations: {
     [mutations.GET_RESTAURANTS](state, data) {
       state.restaurants = data;
+    },
+    [mutations.GET_ALL_ITEMS](state, data) {
+      state.allItems = data;
     },
   },
   actions: {
@@ -47,6 +53,10 @@ const restaurant = {
     async [actions.ADD_ITEM](_, data) {
       const res = await axios.post("/item", data);
       return res.data;
+    },
+    async [actions.GET_ALL_ITEMS]({commit}) {
+      const res = await axios.get("/item");
+      commit(mutations.GET_ALL_ITEMS, res.data)
     },
     async [actions.ADD_TO_ORDER](_, data) {
       await axios.post("/user/order", {

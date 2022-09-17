@@ -23,6 +23,9 @@ export default {
             <router-link to="/orders">
                 Orders
             </router-link>
+            <router-link to="/all-items">
+                All Items
+            </router-link>
         </div>
         <div>
             <div v-if="profile.firstName">

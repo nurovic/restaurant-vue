@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
+import AllItems from '../views/AllItems.vue'
 import Restaurants from '../views/Restaurants.vue'
 import addRestaurant from '../views/AddRestaurant.vue'
 import Orders from '../views/Orders.vue'
@@ -84,6 +85,19 @@ const routes = [
     path: '/orders',
     name: 'orders',
     component: Orders,
+    beforeEnter: (to, from, next) => {
+      if (store.state.user.profile.firstName === undefined) {
+        return next({
+          name: "login",
+        });
+      }
+      next();
+    },
+  },
+  {
+    path: '/all-items',
+    name: 'allItems',
+    component: AllItems,
     beforeEnter: (to, from, next) => {
       if (store.state.user.profile.firstName === undefined) {
         return next({
