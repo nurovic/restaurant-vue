@@ -44,7 +44,7 @@ export default {
             </router-link>
 
             <div v-for="restaurant in restaurants" :key="restaurant.id">
-                <div class="flex flex-row mb-8 mt-12 justify-center">
+                <div class="flex flex-row mt-12 justify-center border p-2">
                     <h1 class="font-bold w-36">{{restaurant.name}}</h1>
                     <span class="w-56"> {{restaurant.phone}}</span>
                     <button @click="getItems(restaurant.id)"

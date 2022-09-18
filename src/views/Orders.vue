@@ -7,8 +7,8 @@ import Loading from '../components/Loading.vue'
 export default {
     name: "orders",
     components: {
-    Loading
-},
+        Loading
+    },
     data() {
         return {
             orders: [],
@@ -41,16 +41,16 @@ export default {
         </div>
         <div v-else>
             <div v-for="order in orders" :key="order.id">
-            <div class="flex flex-row mb-8 mt-12 justify-center">
-            <h1 class="font-bold w-36"> {{order.resturant.name}}</h1>
-            <h1 class="font-bold w-36">{{order.resturant.phone}}</h1>
+                <div class="flex flex-row mb-8 mt-12 justify-center border p-2">
+                    <h1 class="font-bold w-36"> {{order.resturant.name}}</h1>
+                    <h1 class="font-bold w-36">{{order.resturant.phone}}</h1>
 
-            <div v-for="item in order.items" :key="item.id" class="flex flex-row justify-center">
-                <p class="mr-8">{{item.name}}</p>
-                <p class="mr-8">{{item.price}}</p>
+                    <div v-for="item in order.items" :key="item.id" class="flex flex-row justify-center">
+                        <p class="mr-8">{{item.name}}</p>
+                        <p class="mr-8">{{item.price}}</p>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
         </div>
     </div>
 </template>

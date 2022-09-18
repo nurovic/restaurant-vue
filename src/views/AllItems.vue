@@ -38,7 +38,7 @@ export default {
             <Loading />
         </div>
         <div v-else v-for="item in allItems" :key="item.id">
-            <div class="flex flex-row mb-8 mt-12 justify-center">
+            <div class="flex flex-row mb-8 mt-12 justify-center border p-2">
                 <h1 class="font-bold w-36">{{item.name}}</h1>
                 <span class="w-56"> {{item.price}}</span>
             </div>

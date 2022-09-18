@@ -13,7 +13,7 @@ export default {
     
 <template>
     <div class="flex justify-between px-24 pt-6">
-        <div class="flex justify-between w-64">
+        <div class="flex justify-between w-72">
             <router-link to="/">
                 Home
             </router-link>
